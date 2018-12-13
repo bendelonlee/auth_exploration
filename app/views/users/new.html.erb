@@ -1,3 +1,9 @@
+<%= @user.errors.full_messages.each do |message| %>
+  <ul>
+    <%= message %>
+  </ul>
+<% end %>
+
 <%= form_for @user do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>

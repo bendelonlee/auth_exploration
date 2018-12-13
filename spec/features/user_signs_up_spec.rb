@@ -24,5 +24,17 @@ describe 'user signs up' do
       expect(page).to have_content(email)
       expect(page).to_not have_content(password)
     end
+    it 'returns me to the new page if sign up failed' do
+      visit users_path
+      click_on "Sign Up"
+
+      expect(current_path).to eq(new_user_path)
+
+      fill_in :user_name, with: 'sdfsd'
+      fill_in :user_email, with: 'sdf'
+
+      click_on "Create User"
+      expect(page).to have_content "Password can't be blank"
+    end
   end
 end

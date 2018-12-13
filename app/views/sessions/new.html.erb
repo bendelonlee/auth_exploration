@@ -1,0 +1,11 @@
+<%= form_tag login_path do %>
+
+  <%= label_tag "email" %>
+  <%= text_field_tag "login_info[email]" %>
+
+  <%= label_tag "password" %>
+  <%= text_field_tag "login_info[password]" %>
+
+  <%= submit_tag "Log in" %>
+
+<% end %>
